@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Drag and Drop File Upload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8de4ffbe30.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <style>
+        .head {
+            font-family: 'Merriweather', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="head">
+            <i class="fas fa-book-reader"></i>
+            <div class="head_title">
+                <div class="sub_title1">SELF TEST</div>
+                <div class="sub_title2">CHECK YOUR MEMORIZATION</div>
+            </div>
+        </header>
+        <main>
+            <div class="sentence">
+                <div class="sentence_title1"><br>이런 분들에게 SELF TEST 를 추천드립니다✌️</div>
+                <br>
+                <div class="sentence_title2">
+                    <div class="sentence_1">
+                        <i class="fas fa-user-friends"></i>
+                        <div class="sentence_1_1">"외워도 또 까먹어요!"</div>
+                    </div>
+                    <div class="sentence_2">
+                        <div class="sentence_2_1">"제대로 외우는 데 시간이 너무 많이 걸려요"</div>
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+                <div class="sentence_title3">잘 정리된 노트를 한번 읽는 것 보다 빈칸이 있는 노트를 읽으며 머릿속으로 단어를 채워 넣는 것이 오래 기억됩니다.</div>
+                <br>
+            </div>
+            <form action="http://localhost:5000/fileUpload" method="POST" enctype="multipart/form-data">
+            <div class="drop-zone">
+                <!-- <span class="drop-zone__prompt">Drop file here or click to upload</span> -->
+                <input type="file" name="myFile" class="drop-zone__input">
+                <img id="preview" src="" height="190px" alt="Drop file here or click to upload">
+                <br>
+                <!-- <a id="download" download="thumbnail.jpg" target="_blank">
+                    <img id="thumbnail" src="" width="100" alt="thumbnail" title="이미지 클릭시 다운로드">
+                </a> -->
+                <br>
+                <input type="file" name="file" id="getfile" accept="image/*">
+                <br>
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+    </main>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"> </script>
+</body>
