@@ -13,4 +13,4 @@
 ### 역할 분담
 - Web : 정세민
 - OCR : 서향
-- Text Mining : 
+- Text Mining : 윤영주
